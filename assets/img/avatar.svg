@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ec4899"/>
+      <stop offset="50%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="text" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f0e7ff"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="400" height="400" rx="200" fill="url(#bg)"/>
+  <circle cx="200" cy="200" r="180" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="2" stroke-dasharray="8 12"/>
+  <circle cx="200" cy="200" r="160" fill="rgba(0,0,0,0.18)"/>
+  <text x="200" y="240" text-anchor="middle" font-family="'Space Grotesk', 'Inter', sans-serif" font-size="140" font-weight="800" fill="url(#text)" filter="url(#glow)" letter-spacing="-4">MNS</text>
+  <circle cx="320" cy="90" r="18" fill="#22d3ee" opacity="0.9"/>
+  <circle cx="78" cy="320" r="12" fill="#fb7185" opacity="0.9"/>
+  <circle cx="340" cy="320" r="8" fill="#fde047" opacity="0.9"/>
+</svg>

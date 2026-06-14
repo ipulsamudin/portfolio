@@ -1,0 +1,15 @@
+# Claude Code local settings (contains secrets — never commit)
+.claude/
+
+# Personal certificate not used by the site
+Microsoft MUHAMMAD NUR SYAIFULLAH.pdf
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+
+# OS junk
+Thumbs.db
+desktop.ini
+.DS_Store

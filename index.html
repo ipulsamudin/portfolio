@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0a0418" />
+  <title>Muhammad Nur Syaifullah — Fullstack Developer</title>
+  <meta name="description" content="Portfolio Muhammad Nur Syaifullah — Fullstack Developer dengan 7+ tahun pengalaman membangun aplikasi web & mobile dari skala kecil hingga enterprise." />
+
+  <link rel="icon" type="image/svg+xml" href="assets/img/avatar.svg" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'mns-bg': '#0a0418',
+            'mns-pink': '#ec4899',
+            'mns-purple': '#a855f7',
+            'mns-blue': '#3b82f6',
+            'mns-cyan': '#22d3ee'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Space Grotesk', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+  <!-- Custom style -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body class="bg-mns-bg text-white relative">
+
+  <!-- ============ ANIMATED BACKGROUND BLOBS ============ -->
+  <div class="fixed inset-0 -z-10 overflow-hidden">
+    <div class="absolute inset-0 bg-grid opacity-40"></div>
+    <div class="blob blob-pink"></div>
+    <div class="blob blob-purple"></div>
+    <div class="blob blob-blue"></div>
+    <div class="blob blob-cyan"></div>
+  </div>
+
+  <!-- ============ NAVBAR ============ -->
+  <nav class="navbar">
+    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#hero" class="flex items-center gap-2 group">
+        <span class="text-2xl group-hover:rotate-180 transition-transform duration-500">◆</span>
+        <span class="font-display font-bold text-lg tracking-tight">
+          <span class="gradient-text">Syaiful</span>.dev
+        </span>
+      </a>
+
+      <!-- Desktop nav -->
+      <div class="desktop-nav items-center gap-8 hidden md:flex">
+        <a href="#about"      class="nav-link" data-section="about"      data-i18n="nav.about">Tentang</a>
+        <a href="#skills"     class="nav-link" data-section="skills"     data-i18n="nav.skills">Keahlian</a>
+        <a href="#experience" class="nav-link" data-section="experience" data-i18n="nav.experience">Pengalaman</a>
+        <a href="#projects"   class="nav-link" data-section="projects"   data-i18n="nav.projects">Proyek</a>
+        <a href="#education"  class="nav-link" data-section="education"  data-i18n="nav.education">Pendidikan</a>
+        <a href="#contact"    class="nav-link" data-section="contact"    data-i18n="nav.contact">Kontak</a>
+      </div>
+
+      <!-- Right side: lang toggle + mobile hamburger -->
+      <div class="flex items-center gap-3">
+        <div class="lang-toggle" role="group" aria-label="Language toggle">
+          <button data-lang="id" class="active">ID</button>
+          <button data-lang="en">EN</button>
+        </div>
+        <button id="menu-open" class="mobile-menu md:hidden p-2 rounded-lg bg-white/5 border border-white/10" aria-label="Open menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ MOBILE DRAWER ============ -->
+  <div id="mobile-drawer" class="mobile-drawer">
+    <button id="menu-close" class="absolute top-6 right-6 p-2 rounded-lg bg-white/5 border border-white/10" aria-label="Close menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+    <a href="#about"      class="nav-link" data-i18n="nav.about">Tentang</a>
+    <a href="#skills"     class="nav-link" data-i18n="nav.skills">Keahlian</a>
+    <a href="#experience" class="nav-link" data-i18n="nav.experience">Pengalaman</a>
+    <a href="#projects"   class="nav-link" data-i18n="nav.projects">Proyek</a>
+    <a href="#education"  class="nav-link" data-i18n="nav.education">Pendidikan</a>
+    <a href="#contact"    class="nav-link" data-i18n="nav.contact">Kontak</a>
+  </div>
+
+  <!-- ============ HERO ============ -->
+  <section id="hero" class="relative min-h-screen flex items-center pt-24 pb-12">
+    <div class="max-w-7xl mx-auto px-6 w-full grid md:grid-cols-12 gap-12 items-center">
+      <!-- Left content -->
+      <div class="md:col-span-7 relative z-10" data-aos="fade-up">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 mb-6">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-green-400"></span>
+          </span>
+          <span class="text-xs font-semibold text-gray-300" data-i18n="about.status">Tersedia untuk pekerjaan baru</span>
+        </div>
+
+        <h1 class="font-display font-extrabold text-5xl md:text-7xl leading-[1.05] mb-6">
+          <span class="text-gray-400 text-3xl md:text-4xl block mb-2" data-i18n="hero.greet">Halo Dunia</span>
+          <span data-i18n="hero.iam">Saya</span> <br/>
+          <span class="gradient-text">Muhammad Nur</span> <br/>
+          <span class="gradient-text">Syaifullah.</span>
+        </h1>
+
+        <div class="font-display text-xl md:text-2xl font-semibold mb-6 h-9">
+          <span id="typed-target"></span>
+        </div>
+
+        <p class="text-gray-300 text-base md:text-lg max-w-xl mb-8" data-i18n="hero.tagline">
+          Membangun aplikasi web & mobile yang efisien, aman, dan mudah dipelihara — dari skala kecil hingga enterprise selama 7+ tahun.
+        </p>
+
+        <div class="flex flex-wrap gap-4 mb-10">
+          <a href="#projects" class="btn-primary">
+            <span data-i18n="hero.cta.projects">Lihat Proyek</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="CV.pdf" download class="btn-ghost">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            <span data-i18n="hero.cta.download">Unduh CV</span>
+          </a>
+        </div>
+
+        <!-- Social row -->
+        <div class="flex items-center gap-5 text-gray-400">
+          <a href="mailto:ipulsamudin@gmail.com" class="hover:text-white transition" aria-label="Email">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
+          </a>
+          <a href="https://wa.me/6285219679808" target="_blank" rel="noopener" class="hover:text-green-400 transition" aria-label="WhatsApp">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.9-2.9-1.6-4-3.5-.3-.5.3-.5.8-1.5.1-.2.1-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5 4.5 1.9.8 2.6.9 3.5.7.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.6 1.4 5.2L2 22l5-1.4c1.5.8 3.2 1.3 5 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2"/></svg>
+          </a>
+          <a href="https://linkedin.com/in/muhammad-nur-syaifullah-56a77325a" target="_blank" rel="noopener" class="hover:text-blue-400 transition" aria-label="LinkedIn">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14M8.34 17.34v-7H6.01v7h2.33M7.17 9.34a1.35 1.35 0 1 0 0-2.7 1.35 1.35 0 0 0 0 2.7m11 8v-3.84c0-2.16-1.16-3.17-2.7-3.17-1.25 0-1.81.69-2.12 1.17v-1H11.01v7h2.33v-3.94c0-.94.65-1.55 1.4-1.55.72 0 1.43.52 1.43 1.57v3.92h2.34Z"/></svg>
+          </a>
+          <a href="https://gitlab.com/mnurs" target="_blank" rel="noopener" class="hover:text-orange-400 transition" aria-label="GitLab">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="m22.2 9.7-.03-.08-3-7.93a.78.78 0 0 0-1.5.04L15.6 8.4H8.4L6.36 1.73a.78.78 0 0 0-1.5-.04L1.83 9.6l-.03.1A5.55 5.55 0 0 0 3.8 16.1l.01.01.03.02 4.55 3.41 2.25 1.7 1.37 1.03a.92.92 0 0 0 1.12 0l1.37-1.03 2.25-1.7 4.58-3.43.01-.01A5.55 5.55 0 0 0 22.2 9.7"/></svg>
+          </a>
+          <a href="https://www.instagram.com/mnurs23/" target="_blank" rel="noopener" class="hover:text-pink-400 transition" aria-label="Instagram">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: avatar with floating cards -->
+      <div class="md:col-span-5 relative flex justify-center" data-aos="fade-left" data-aos-delay="200">
+        <div class="relative">
+          <div class="absolute -inset-4 bg-gradient-to-br from-mns-pink via-mns-purple to-mns-blue rounded-full blur-2xl opacity-50 animate-pulse"></div>
+          <img src="assets/img/avatar.svg" alt="Muhammad Nur Syaifullah" class="relative w-72 md:w-80 rounded-full" />
+
+          <!-- Floating chips -->
+          <div class="absolute -top-2 -left-8 glass px-4 py-2 hidden sm:flex items-center gap-2" data-aos="zoom-in" data-aos-delay="600">
+            <span class="text-2xl">⚡</span>
+            <span class="text-sm font-semibold">7+ Years</span>
+          </div>
+          <div class="absolute top-1/3 -right-6 glass px-4 py-2 hidden sm:flex items-center gap-2" data-aos="zoom-in" data-aos-delay="800">
+            <span class="text-2xl">🚀</span>
+            <span class="text-sm font-semibold">15+ Projects</span>
+          </div>
+          <div class="absolute -bottom-2 left-4 glass px-4 py-2 hidden sm:flex items-center gap-2" data-aos="zoom-in" data-aos-delay="1000">
+            <span class="text-2xl">💎</span>
+            <span class="text-sm font-semibold">Laravel · Flutter · React</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider-glow my-2"></div>
+
+  <!-- ============ ABOUT ============ -->
+  <section id="about" class="section-padding relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <span class="section-eyebrow" data-i18n="about.eyebrow">Tentang Saya</span>
+        <h2 class="section-title font-display">
+          <span data-i18n="about.title">Developer yang penuh semangat & detail-oriented</span>
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-12 gap-8">
+        <div class="md:col-span-7 space-y-5" data-aos="fade-right">
+          <p class="text-gray-300 text-lg" data-i18n="about.p1">
+            Saya Muhammad Nur Syaifullah, seorang Fullstack Developer berbasis di Depok, Indonesia.
+          </p>
+          <p class="text-gray-300 text-lg" data-i18n="about.p2">
+            Saya fokus pada kualitas kode, performa, dan pengalaman pengguna.
+          </p>
+
+          <div class="flex items-center gap-3 text-gray-400 text-sm pt-2">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span data-i18n="about.location">Berbasis di Depok, Indonesia</span>
+          </div>
+        </div>
+
+        <!-- Stats grid -->
+        <div class="md:col-span-5 grid grid-cols-2 gap-4" data-aos="fade-left">
+          <div class="glass p-6">
+            <div class="stat-num gradient-text">7+</div>
+            <div class="text-sm text-gray-400 mt-2" data-i18n="about.stat.years">Tahun Pengalaman</div>
+          </div>
+          <div class="glass p-6">
+            <div class="stat-num gradient-text">15+</div>
+            <div class="text-sm text-gray-400 mt-2" data-i18n="about.stat.projects">Proyek Diselesaikan</div>
+          </div>
+          <div class="glass p-6">
+            <div class="stat-num gradient-text">5+</div>
+            <div class="text-sm text-gray-400 mt-2" data-i18n="about.stat.companies">Perusahaan</div>
+          </div>
+          <div class="glass p-6">
+            <div class="stat-num gradient-text">3.81</div>
+            <div class="text-sm text-gray-400 mt-2" data-i18n="about.stat.gpa">IPK Sarjana</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS ============ -->
+  <section id="skills" class="section-padding relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-14" data-aos="fade-up">
+        <span class="section-eyebrow" data-i18n="skills.eyebrow">Keahlian Teknis</span>
+        <h2 class="section-title font-display"><span data-i18n="skills.title">Tools yang saya kuasai setiap hari</span></h2>
+        <p class="text-gray-400 max-w-2xl mx-auto" data-i18n="skills.subtitle">
+          Stack yang sudah saya pakai di proyek nyata, bukan sekadar di tutorial.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Frontend -->
+        <div class="glass p-6" data-aos="fade-up" data-aos-delay="0">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-pink-500/15 flex items-center justify-center">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ec4899" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <h3 class="font-display font-bold text-lg" data-i18n="skills.frontend">Frontend</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-badge"><span class="dot"></span>React.js</span>
+            <span class="skill-badge"><span class="dot"></span>Vue.js</span>
+            <span class="skill-badge"><span class="dot"></span>HTML</span>
+            <span class="skill-badge"><span class="dot"></span>CSS</span>
+            <span class="skill-badge"><span class="dot"></span>JavaScript</span>
+            <span class="skill-badge"><span class="dot"></span>jQuery</span>
+            <span class="skill-badge"><span class="dot"></span>Tailwind CSS</span>
+            <span class="skill-badge"><span class="dot"></span>Bootstrap</span>
+          </div>
+        </div>
+
+        <!-- Backend -->
+        <div class="glass p-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-purple-500/15 flex items-center justify-center">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>
+            </div>
+            <h3 class="font-display font-bold text-lg" data-i18n="skills.backend">Backend</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-badge"><span class="dot"></span>Laravel</span>
+            <span class="skill-badge"><span class="dot"></span>Node.js</span>
+            <span class="skill-badge"><span class="dot"></span>Express.js</span>
+            <span class="skill-badge"><span class="dot"></span>PHP</span>
+            <span class="skill-badge"><span class="dot"></span>Python</span>
+            <span class="skill-badge"><span class="dot"></span>Java</span>
+            <span class="skill-badge"><span class="dot"></span>Spring</span>
+            <span class="skill-badge"><span class="dot"></span>C#</span>
+            <span class="skill-badge"><span class="dot"></span>.NET MVC</span>
+          </div>
+        </div>
+
+        <!-- Mobile -->
+        <div class="glass p-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-blue-500/15 flex items-center justify-center">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+            </div>
+            <h3 class="font-display font-bold text-lg" data-i18n="skills.mobile">Mobile</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-badge"><span class="dot"></span>Flutter</span>
+            <span class="skill-badge"><span class="dot"></span>Dart</span>
+            <span class="skill-badge"><span class="dot"></span>Android (Java)</span>
+            <span class="skill-badge"><span class="dot"></span>Firebase</span>
+          </div>
+        </div>
+
+        <!-- Database -->
+        <div class="glass p-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-cyan-500/15 flex items-center justify-center">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+            </div>
+            <h3 class="font-display font-bold text-lg" data-i18n="skills.database">Database</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-badge"><span class="dot"></span>MySQL</span>
+            <span class="skill-badge"><span class="dot"></span>SQL Server</span>
+            <span class="skill-badge"><span class="dot"></span>SQL</span>
+            <span class="skill-badge"><span class="dot"></span>Redis</span>
+            <span class="skill-badge"><span class="dot"></span>Firebase</span>
+          </div>
+        </div>
+
+        <!-- Tools -->
+        <div class="glass p-6 lg:col-span-2" data-aos="fade-up" data-aos-delay="400">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-orange-500/15 flex items-center justify-center">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fb923c" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            </div>
+            <h3 class="font-display font-bold text-lg" data-i18n="skills.tools">Tools & DevOps</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-badge"><span class="dot"></span>Git</span>
+            <span class="skill-badge"><span class="dot"></span>GitLab</span>
+            <span class="skill-badge"><span class="dot"></span>Sourcetree</span>
+            <span class="skill-badge"><span class="dot"></span>Postman</span>
+            <span class="skill-badge"><span class="dot"></span>XAMPP</span>
+            <span class="skill-badge"><span class="dot"></span>VS Code</span>
+            <span class="skill-badge"><span class="dot"></span>Android Studio</span>
+            <span class="skill-badge"><span class="dot"></span>Visual Studio</span>
+            <span class="skill-badge"><span class="dot"></span>NetBeans</span>
+            <span class="skill-badge"><span class="dot"></span>REST API</span>
+            <span class="skill-badge"><span class="dot"></span>Matomo</span>
+            <span class="skill-badge"><span class="dot"></span>Meta Pixel</span>
+            <span class="skill-badge"><span class="dot"></span>GTM</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE ============ -->
+  <section id="experience" class="section-padding relative">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center mb-14" data-aos="fade-up">
+        <span class="section-eyebrow" data-i18n="exp.eyebrow">Pengalaman Kerja</span>
+        <h2 class="section-title font-display"><span data-i18n="exp.title">Perjalanan profesional saya</span></h2>
+        <p class="text-gray-400 max-w-2xl mx-auto" data-i18n="exp.subtitle">Empat perusahaan, banyak peran, satu konsistensi: deliver hasil.</p>
+      </div>
+
+      <div class="timeline">
+        <!-- Raihmimpi -->
+        <div class="timeline-item" data-aos="fade-up">
+          <div class="glass p-6">
+            <div class="flex flex-wrap items-baseline justify-between gap-2 mb-2">
+              <h3 class="font-display font-bold text-xl" data-i18n="exp.raih.title">Fullstack Developer</h3>
+              <span class="text-xs font-semibold text-mns-pink uppercase tracking-wider" data-i18n="exp.raih.period">2024 — Sekarang</span>
+            </div>
+            <p class="text-purple-300 font-semibold mb-3" data-i18n="exp.raih.company">Raihmimpi Company</p>
+            <ul class="space-y-2 text-gray-300 text-sm list-disc list-outside pl-5">
+              <li data-i18n="exp.raih.d1">Memelihara & meningkatkan platform web melalui pengembangan fitur transaksi, modul blog, dan sistem kampanye fundraising.</li>
+              <li data-i18n="exp.raih.d2">Mengintegrasikan tools tracking & analytics: Matomo, Meta Pixel, Google Tag Manager.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Auraderma -->
+        <div class="timeline-item" data-aos="fade-up">
+          <div class="glass p-6">
+            <div class="flex flex-wrap items-baseline justify-between gap-2 mb-2">
+              <h3 class="font-display font-bold text-xl" data-i18n="exp.aura.title">Fullstack Developer</h3>
+              <span class="text-xs font-semibold text-mns-pink uppercase tracking-wider" data-i18n="exp.aura.period">2018 — Sekarang</span>
+            </div>
+            <p class="text-purple-300 font-semibold mb-3" data-i18n="exp.aura.company">Auraderma Company</p>
+            <ul class="space-y-2 text-gray-300 text-sm list-disc list-outside pl-5">
+              <li data-i18n="exp.aura.d1">Merancang & membangun aplikasi web dengan Laravel, Bootstrap, dan jQuery untuk operasional bisnis.</li>
+              <li data-i18n="exp.aura.d2">Membangun modul aman & terstruktur untuk rekam medis pasien.</li>
+              <li data-i18n="exp.aura.d3">Fitur tracking inventaris real-time.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- JustPrint -->
+        <div class="timeline-item" data-aos="fade-up">
+          <div class="glass p-6">
+            <div class="flex flex-wrap items-baseline justify-between gap-2 mb-2">
+              <h3 class="font-display font-bold text-xl" data-i18n="exp.just.title">Mobile Developer</h3>
+              <span class="text-xs font-semibold text-mns-pink uppercase tracking-wider" data-i18n="exp.just.period">Jul 2022 — Agu 2023</span>
+            </div>
+            <p class="text-purple-300 font-semibold mb-3" data-i18n="exp.just.company">JustPrint</p>
+            <ul class="space-y-2 text-gray-300 text-sm list-disc list-outside pl-5">
+              <li data-i18n="exp.just.d1">Aplikasi mobile cross-platform dengan Flutter & Firebase, upload dokumen real-time, Google Maps, pembayaran online.</li>
+              <li data-i18n="exp.just.d2">Dashboard admin responsif untuk transaksi, monitor order, laporan finansial.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Bukalapak -->
+        <div class="timeline-item" data-aos="fade-up">
+          <div class="glass p-6">
+            <div class="flex flex-wrap items-baseline justify-between gap-2 mb-2">
+              <h3 class="font-display font-bold text-xl" data-i18n="exp.buka.title">Backend Developer</h3>
+              <span class="text-xs font-semibold text-mns-pink uppercase tracking-wider" data-i18n="exp.buka.period">Jun 2019 — Agu 2019</span>
+            </div>
+            <p class="text-purple-300 font-semibold mb-3" data-i18n="exp.buka.company">Bukalapak Company</p>
+            <ul class="space-y-2 text-gray-300 text-sm list-disc list-outside pl-5">
+              <li data-i18n="exp.buka.d1">Mengembangkan REST API yang skalabel untuk career site Bukalapak menggunakan Lumen.</li>
+              <li data-i18n="exp.buka.d2">Menangani fungsi core backend: job listing, application, user auth, integrasi pihak ketiga.</li>
+              <li data-i18n="exp.buka.d3">Berkolaborasi dengan tim frontend & product untuk performa optimal.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section id="projects" class="section-padding relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-10" data-aos="fade-up">
+        <span class="section-eyebrow" data-i18n="proj.eyebrow">Portofolio Proyek</span>
+        <h2 class="section-title font-display"><span data-i18n="proj.title">15+ proyek nyata di berbagai industri</span></h2>
+        <p class="text-gray-400 max-w-2xl mx-auto" data-i18n="proj.subtitle">Dari kepolisian, BUMN, e-commerce, hingga klinik kecantikan — saya pernah membangunnya.</p>
+      </div>
+
+      <!-- Filter -->
+      <div class="flex flex-wrap justify-center gap-2 mb-10" data-aos="fade-up">
+        <button class="filter-btn active" data-filter="all"     data-i18n="proj.filter.all">Semua</button>
+        <button class="filter-btn"        data-filter="web"     data-i18n="proj.filter.web">Web</button>
+        <button class="filter-btn"        data-filter="mobile"  data-i18n="proj.filter.mobile">Mobile</button>
+        <button class="filter-btn"        data-filter="api"     data-i18n="proj.filter.api">API</button>
+        <button class="filter-btn"        data-filter="desktop" data-i18n="proj.filter.desktop">Desktop</button>
+      </div>
+
+      <!-- Grid -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Auraderma -->
+        <article class="project-card glass p-6" data-category="web mobile" data-aos="fade-up">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-pink-500 to-purple-500 flex items-center justify-center font-display font-bold text-xl">A</div>
+            <div class="flex gap-1">
+              <span class="tech-pill">Web</span>
+              <span class="tech-pill">Mobile</span>
+            </div>
+          </div>
+          <h3 class="font-display font-bold text-lg mb-2">Auraderma</h3>
+          <p class="text-xs text-gray-500 mb-2"><span data-i18n="proj.client">Klien</span>: PT. Auraderma Jaya Nusantara</p>
+          <p class="text-sm text-gray-300 mb-4" data-i18n="proj.auraderma.desc">Sistem manajemen klinik kecantikan.</p>
+          <div class="flex flex-wrap gap-1">
+            <span class="tech-pill">Laravel</span>
+            <span class="tech-pill">PHP</span>
+            <span class="tech-pill">jQuery</span>
+            <span class="tech-pill">MySQL</span>
+            <span class="tech-pill">Flutter</span>
+          </div>
+        </article>
+
+        <!-- Raihmimpi -->
+        <article class="project-card glass p-6" data-category="web" data-aos="fade-up">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center font-display font-bold text-xl">R</div>
+            <span class="tech-pill">Web</span>
+          </div>
+          <h3 class="font-display font-bold text-lg mb-2">Raihmimpi Platform</h3>
+          <p class="text-xs text-gray-500 mb-2"><span data-i18n="proj.client">Klien</span>: Raihmimpi</p>
+          <p class="text-sm text-gray-300 mb-4" data-i18n="proj.raihmimpi.desc">Platform fundraising dengan transaksi, blog, dan tracking.</p>
+          <div class="flex flex-wrap gap-1">
+            <span class="tech-pill">Laravel</span>
+            <span class="tech-pill">Matomo</span>
+            <span class="tech-pill">Meta Pixel</span>
+            <span class="tech-pill">GTM</span>
+          </div>
+        </article>
+
+        <!-- Bukalapak -->
+        <article class="project-card glass p-6" data-category="api" data-aos="fade-up">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-red-500 to-pink-500 flex items-center justify-center font-display font-bold text-xl">B</div>
+            <span class="tech-pill">API</span>
+          </div>
+          <h3 class="font-display font-bold text-lg mb-2">Bukalapak Career Site</h3>
+          <p class="text-xs text-gray-500 mb-2"><span data-i18n="proj.client">Klien</span>: Bukalapak</p>
+          <p class="text-sm text-gray-300 mb-4" data-i18n="proj.bukalapak.desc">REST API career site dengan job listing & auth.</p>
+          <div class="flex flex-wrap gap-1">
+            <span class="tech-pill">PHP</span>
+            <span class="tech-pill">Lumen</span>
+            <span class="tech-pill">MySQL</span>
+            <span class="tech-pill">REST API</span>
+          </div>
+        </article>
+
+        <!-- JustPrint -->
+        <article class="project-card glass p-6" data-category="mobile" data-aos="fade-up">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center font-display font-bold text-xl">J</div>
+            <span class="tech-pill">Mobile</span>
+          </div>
+          <h3 class="font-display font-bold text-lg mb-2">JustPrint</h3>
+          <p class="text-xs text-gray-500 mb-2"><span data-i18n="proj.client">Klien</span>: JustPrint</p>
+          <p class="text-sm text-gray-300 mb-4" data-i18n="proj.justprint.desc">Mobile print-on-demand dengan Google Maps & payment.</p>
+          <div class="flex flex-wrap gap-1">
+            <span class="tech-pill">Flutter</span>
+            <span class="tech-pill">Firebase</span>
+            <span class="tech-pill">Dart</span>
+            <span class="tech-pill">Google Maps</span>
+          </div>
+        </article>
+
+        <!-- Glagahwangi -->
+        <article class="project-card glass p-6" data-category="web" data-aos="fade-up">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center font-display font-bold text-xl">G</div>
+            <span class="tech-pill">Web</span>
+          </div>
+          <h3 class="font-display font-bold text-lg mb-2">Desa Glagahwangi</h3>
+          <p class="text-xs text-gray-500 mb-2"><span data-i18n="proj.client">Klien</span>: Pemerintah Desa</p>
+          <p class="text-sm text-gray-300 mb-4" data-i18n="proj.glagahwangi.desc">Website profil desa + admin panel CMS.</p>
+          <div class="flex flex-wrap gap-1">
+            <span class="tech-pill">Laravel</span>
+            <span class="tech-pill">Tailwind</span>
+            <span class="tech-pill">MySQL</span>
+          </div>
+        </article>
+
+        <!-- Karisma -->
+        <article class="project-card glass p-6" data-category="web" data-aos="fade-up">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center font-display font-bold text-xl">K</div>
+            <span class="tech-pill">Web</span>
+          </div>
+          <h3 class="font-display font-bold text-lg mb-2">Karisma E-Billing</h3>
+          <p class="text-xs text-gray-500 mb-2"><span data-i18n="proj.client">Klien</span>: Karisma Flight Support</p>
+          <p class="text-sm text-gray-300 mb-4" data-i18n="proj.karisma.desc">E-billing dengan multi-level approval workflow.</p>
+          <div class="flex flex-wrap gap-1">
+            <span class="tech-pill">Laravel</span>
+            <span class="tech-pill">Bootstrap</span>
+            <span class="tech-pill">MySQL</span>
+          </div>
+        </article>
+
+        <!-- Ground Handling -->
+        <article class="project-card glass p-6" data-category="web" data-aos="fade-up">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-sky-500 to-indigo-500 flex items-center justify-center font-display font-bold text-xl">✈</div>
+            <span class="tech-pill">Web</span>
+          </div>
+          <h3 class="font-display font-bold text-lg mb-2">Ground Handling Service</h3>
+          <p class="text-xs text-gray-500 mb-2"><span data-i18n="proj.client">Klien</span>: Aviation</p>
+          <p class="text-sm text-gray-300 mb-4" data-i18n="proj.groundh.desc">Penjadwalan penerbangan & maintenance tracking.</p>
+          <div class="flex flex-wrap gap-1">
+            <span class="tech-pill">Laravel</span>
+            <span class="tech-pill">Bootstrap</span>
+            <span class="tech-pill">MySQL</span>
+          </div>
+        </article>
+
+        <!-- Fitzroy -->
+        <article class="project-card glass p-6" data-category="mobile" data-aos="fade-up">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-rose-500 to-fuchsia-500 flex items-center justify-center font-display font-bold text-xl">F</div>
+            <span class="tech-pill">Mobile</span>
+          </div>
+          <h3 class="font-display font-bold text-lg mb-2">Fitzroy ESS</h3>
+          <p class="text-xs text-gray-500 mb-2"><span data-i18n="proj.client">Klien</span>: Fitzroy</p>
+          <p class="text-sm text-gray-300 mb-4" data-i18n="proj.fitzroy.desc">Employee Self-Service: leave, payslip, work order.</p>
+          <div class="flex flex-wrap gap-1">
+            <span class="tech-pill">Flutter</span>
+            <span class="tech-pill">Dart</span>
+            <span class="tech-pill">REST API</span>
+          </div>
+        </article>
+
+        <!-- Lantas Polda -->
+        <article class="project-card glass p-6" data-category="web" data-aos="fade-up">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-slate-500 to-blue-500 flex items-center justify-center font-display font-bold text-xl">L</div>
+            <span class="tech-pill">Web</span>
+          </div>
+          <h3 class="font-display font-bold text-lg mb-2">Lantas Polda</h3>
+          <p class="text-xs text-gray-500 mb-2"><span data-i18n="proj.client">Klien</span>: Polda Metro</p>
+          <p class="text-sm text-gray-300 mb-4" data-i18n="proj.lantas.desc">Distribusi bantuan finansial pengemudi.</p>
+          <div class="flex flex-wrap gap-1">
+            <span class="tech-pill">Laravel</span>
+            <span class="tech-pill">Bootstrap</span>
+            <span class="tech-pill">MySQL</span>
+          </div>
+        </article>
+
+        <!-- IDAMS Pertamina -->
+        <article class="project-card glass p-6" data-category="web" data-aos="fade-up">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-red-600 to-yellow-500 flex items-center justify-center font-display font-bold text-xl">P</div>
+            <span class="tech-pill">Web</span>
+          </div>
+          <h3 class="font-display font-bold text-lg mb-2">IDAMS Pertamina</h3>
+          <p class="text-xs text-gray-500 mb-2"><span data-i18n="proj.client">Klien</span>: PT Pertamina (Persero)</p>
+          <p class="text-sm text-gray-300 mb-4" data-i18n="proj.idams.desc">Aplikasi internal Pertamina.</p>
+          <div class="flex flex-wrap gap-1">
+            <span class="tech-pill">C#</span>
+            <span class="tech-pill">.NET MVC</span>
+            <span class="tech-pill">Dapper</span>
+            <span class="tech-pill">SQL Server</span>
+          </div>
+        </article>
+
+        <!-- PKBL Pertamina -->
+        <article class="project-card glass p-6" data-category="web" data-aos="fade-up">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-yellow-500 to-red-500 flex items-center justify-center font-display font-bold text-xl">P</div>
+            <span class="tech-pill">Web</span>
+          </div>
+          <h3 class="font-display font-bold text-lg mb-2">PKBL Pertamina</h3>
+          <p class="text-xs text-gray-500 mb-2"><span data-i18n="proj.client">Klien</span>: PT Pertamina (Persero)</p>
+          <p class="text-sm text-gray-300 mb-4" data-i18n="proj.pkbl.desc">Program Kemitraan & Bina Lingkungan.</p>
+          <div class="flex flex-wrap gap-1">
+            <span class="tech-pill">C#</span>
+            <span class="tech-pill">.NET MVC</span>
+            <span class="tech-pill">Dapper</span>
+            <span class="tech-pill">SQL Server</span>
+          </div>
+        </article>
+
+        <!-- TIDS Mercedes -->
+        <article class="project-card glass p-6" data-category="web" data-aos="fade-up">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-slate-400 to-slate-700 flex items-center justify-center font-display font-bold text-xl">M</div>
+            <span class="tech-pill">Web</span>
+          </div>
+          <h3 class="font-display font-bold text-lg mb-2">TIDS CV</h3>
+          <p class="text-xs text-gray-500 mb-2"><span data-i18n="proj.client">Klien</span>: PT Mercedes Benz Indonesia</p>
+          <p class="text-sm text-gray-300 mb-4" data-i18n="proj.tids.desc">Website internal Mercedes Benz Indonesia.</p>
+          <div class="flex flex-wrap gap-1">
+            <span class="tech-pill">HTML</span>
+            <span class="tech-pill">C#</span>
+            <span class="tech-pill">.NET MVC</span>
+            <span class="tech-pill">SQL Server</span>
+          </div>
+        </article>
+
+        <!-- Aurel Bawaslu -->
+        <article class="project-card glass p-6" data-category="web" data-aos="fade-up">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center font-display font-bold text-xl">A</div>
+            <span class="tech-pill">Web</span>
+          </div>
+          <h3 class="font-display font-bold text-lg mb-2">Aurel Bawaslu</h3>
+          <p class="text-xs text-gray-500 mb-2"><span data-i18n="proj.client">Klien</span>: Bawaslu</p>
+          <p class="text-sm text-gray-300 mb-4" data-i18n="proj.aurel.desc">Aplikasi pengawasan pemilu.</p>
+          <div class="flex flex-wrap gap-1">
+            <span class="tech-pill">Vue</span>
+            <span class="tech-pill">Java Spring</span>
+            <span class="tech-pill">MySQL</span>
+          </div>
+        </article>
+
+        <!-- Kupon Traveloka -->
+        <article class="project-card glass p-6" data-category="desktop" data-aos="fade-up">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-400 to-cyan-400 flex items-center justify-center font-display font-bold text-xl">T</div>
+            <span class="tech-pill">Desktop</span>
+          </div>
+          <h3 class="font-display font-bold text-lg mb-2">Kupon Traveloka</h3>
+          <p class="text-xs text-gray-500 mb-2"><span data-i18n="proj.client">Klien</span>: Traveloka</p>
+          <p class="text-sm text-gray-300 mb-4" data-i18n="proj.kupon.desc">Aplikasi desktop manajemen kupon.</p>
+          <div class="flex flex-wrap gap-1">
+            <span class="tech-pill">C#</span>
+            <span class="tech-pill">.NET</span>
+            <span class="tech-pill">MySQL</span>
+          </div>
+        </article>
+
+        <!-- Disposisi Polda -->
+        <article class="project-card glass p-6" data-category="mobile" data-aos="fade-up">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-violet-500 flex items-center justify-center font-display font-bold text-xl">D</div>
+            <span class="tech-pill">Mobile</span>
+          </div>
+          <h3 class="font-display font-bold text-lg mb-2">Disposisi Polda</h3>
+          <p class="text-xs text-gray-500 mb-2"><span data-i18n="proj.client">Klien</span>: Polda Metro</p>
+          <p class="text-sm text-gray-300 mb-4" data-i18n="proj.disposisi.desc">Disposisi surat Android native.</p>
+          <div class="flex flex-wrap gap-1">
+            <span class="tech-pill">Android</span>
+            <span class="tech-pill">Java</span>
+          </div>
+        </article>
+
+        <!-- Ahli Skincare -->
+        <article class="project-card glass p-6" data-category="mobile" data-aos="fade-up">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-pink-400 to-rose-500 flex items-center justify-center font-display font-bold text-xl">S</div>
+            <span class="tech-pill">Mobile</span>
+          </div>
+          <h3 class="font-display font-bold text-lg mb-2">Ahli Skincare</h3>
+          <p class="text-xs text-gray-500 mb-2"><span data-i18n="proj.client">Klien</span>: Auraderma</p>
+          <p class="text-sm text-gray-300 mb-4" data-i18n="proj.ahli.desc">Konsultasi skincare mobile app.</p>
+          <div class="flex flex-wrap gap-1">
+            <span class="tech-pill">Flutter</span>
+            <span class="tech-pill">Dart</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURED PRIVATE WORK ============ -->
+  <section id="featured" class="section-padding relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-12" data-aos="fade-up">
+        <span class="section-eyebrow" data-i18n="feat.eyebrow">Pekerjaan Profesional</span>
+        <h2 class="section-title font-display"><span data-i18n="feat.title">Pengembangan Sistem Klien & Internal</span></h2>
+        <p class="text-gray-400 max-w-2xl mx-auto" data-i18n="feat.subtitle">
+          Sorotan dari pekerjaan saya saat ini — repositori private di bawah NDA. Hanya nama, deskripsi, & stack yang ditampilkan.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+        <a href="http://frans.training/" target="_blank" rel="noopener" class="glass p-6 block group" data-aos="fade-up">
+          <div class="flex items-start justify-between mb-3">
+            <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-indigo-500 to-cyan-500 flex items-center justify-center text-xl">🎓</div>
+            <span class="tech-pill bg-green-500/15 text-green-300 border-green-500/30" data-i18n="feat.live">Live → frans.training</span>
+          </div>
+          <h3 class="font-display font-bold text-base mb-1.5 group-hover:text-mns-pink transition" data-i18n="feat.frans.name">Frans Training</h3>
+          <p class="text-sm text-gray-400 mb-3" data-i18n="feat.frans.desc">Platform training profesional terakreditasi (OJK / IAI / BNSP).</p>
+          <div class="flex gap-1 flex-wrap">
+            <span class="tech-pill">Laravel</span>
+            <span class="tech-pill">PHP</span>
+            <span class="tech-pill">MySQL</span>
+            <span class="tech-pill">TailwindCSS</span>
+          </div>
+        </a>
+
+        <article class="glass p-6" data-aos="fade-up">
+          <div class="flex items-start justify-between mb-3">
+            <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-pink-500 to-purple-500 flex items-center justify-center text-xl">🎯</div>
+            <span class="tech-pill" data-i18n="feat.confidential">Confidential</span>
+          </div>
+          <h3 class="font-display font-bold text-base mb-1.5" data-i18n="feat.raih.name">RaihMimpi Fundraising Platform</h3>
+          <p class="text-sm text-gray-400 mb-3" data-i18n="feat.raih.desc">Platform fundraising microservices end-to-end.</p>
+          <div class="flex gap-1 flex-wrap">
+            <span class="tech-pill">Python</span>
+            <span class="tech-pill">FastAPI</span>
+            <span class="tech-pill">Laravel</span>
+            <span class="tech-pill">React</span>
+            <span class="tech-pill">Flutter</span>
+            <span class="tech-pill">MySQL</span>
+            <span class="tech-pill">Docker</span>
+          </div>
+        </article>
+
+        <article class="glass p-6" data-aos="fade-up">
+          <div class="flex items-start justify-between mb-3">
+            <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center text-xl">🎾</div>
+            <span class="tech-pill" data-i18n="feat.confidential">Confidential</span>
+          </div>
+          <h3 class="font-display font-bold text-base mb-1.5" data-i18n="feat.goofy.name">Goofy Padel — SOP & Ops Platform</h3>
+          <p class="text-sm text-gray-400 mb-3" data-i18n="feat.goofy.desc">PWA dengan Vertex AI RAG untuk SOP klub padel.</p>
+          <div class="flex gap-1 flex-wrap">
+            <span class="tech-pill">Next.js</span>
+            <span class="tech-pill">PWA</span>
+            <span class="tech-pill">Vertex AI</span>
+            <span class="tech-pill">RAG</span>
+            <span class="tech-pill">TypeScript</span>
+          </div>
+        </article>
+
+        <article class="glass p-6" data-aos="fade-up">
+          <div class="flex items-start justify-between mb-3">
+            <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-slate-500 to-blue-500 flex items-center justify-center text-xl">🛡️</div>
+            <span class="tech-pill" data-i18n="feat.confidential">Confidential</span>
+          </div>
+          <h3 class="font-display font-bold text-base mb-1.5" data-i18n="feat.polda.name">Polda Kalbar — Pusat Kendali</h3>
+          <p class="text-sm text-gray-400 mb-3" data-i18n="feat.polda.desc">Pitch decks, budget calculator, Asta Cita tracker.</p>
+          <div class="flex gap-1 flex-wrap">
+            <span class="tech-pill">Web</span>
+            <span class="tech-pill">Dashboard</span>
+            <span class="tech-pill">Charts</span>
+            <span class="tech-pill">React</span>
+          </div>
+        </article>
+
+        <article class="glass p-6" data-aos="fade-up">
+          <div class="flex items-start justify-between mb-3">
+            <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-red-600 to-yellow-500 flex items-center justify-center text-xl">⛽</div>
+            <span class="tech-pill" data-i18n="feat.confidential">Confidential</span>
+          </div>
+          <h3 class="font-display font-bold text-base mb-1.5" data-i18n="feat.pkbl.name">Pertamina PKBL Service (Frontend)</h3>
+          <p class="text-sm text-gray-400 mb-3" data-i18n="feat.pkbl.desc">Frontend modern PKBL Pertamina.</p>
+          <div class="flex gap-1 flex-wrap">
+            <span class="tech-pill">React</span>
+            <span class="tech-pill">REST API</span>
+            <span class="tech-pill">TailwindCSS</span>
+          </div>
+        </article>
+
+        <article class="glass p-6" data-aos="fade-up">
+          <div class="flex items-start justify-between mb-3">
+            <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-rose-500 to-pink-500 flex items-center justify-center text-xl">💄</div>
+            <span class="tech-pill" data-i18n="feat.confidential">Confidential</span>
+          </div>
+          <h3 class="font-display font-bold text-base mb-1.5" data-i18n="feat.aura.name">Auraderma Internal Suite</h3>
+          <p class="text-sm text-gray-400 mb-3" data-i18n="feat.aura.desc">Transaksi, stok, pembelian + company profile.</p>
+          <div class="flex gap-1 flex-wrap">
+            <span class="tech-pill">Laravel</span>
+            <span class="tech-pill">PHP</span>
+            <span class="tech-pill">jQuery</span>
+            <span class="tech-pill">MySQL</span>
+          </div>
+        </article>
+
+        <article class="glass p-6" data-aos="fade-up">
+          <div class="flex items-start justify-between mb-3">
+            <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-fuchsia-500 to-purple-500 flex items-center justify-center text-xl">📦</div>
+            <span class="tech-pill" data-i18n="feat.confidential">Confidential</span>
+          </div>
+          <h3 class="font-display font-bold text-base mb-1.5" data-i18n="feat.aurastock.name">Auraderma Stock Automation</h3>
+          <p class="text-sm text-gray-400 mb-3" data-i18n="feat.aurastock.desc">Pipeline otomatisasi stok antar cabang.</p>
+          <div class="flex gap-1 flex-wrap">
+            <span class="tech-pill">Python</span>
+            <span class="tech-pill">Automation</span>
+            <span class="tech-pill">Cron</span>
+          </div>
+        </article>
+
+        <article class="glass p-6" data-aos="fade-up">
+          <div class="flex items-start justify-between mb-3">
+            <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center text-xl">🧾</div>
+            <span class="tech-pill" data-i18n="feat.confidential">Confidential</span>
+          </div>
+          <h3 class="font-display font-bold text-base mb-1.5" data-i18n="feat.kba.name">KBA Invoice Signer & Pipeline</h3>
+          <p class="text-sm text-gray-400 mb-3" data-i18n="feat.kba.desc">Multi-level approval + QR + AI audit.</p>
+          <div class="flex gap-1 flex-wrap">
+            <span class="tech-pill">Laravel</span>
+            <span class="tech-pill">MySQL</span>
+            <span class="tech-pill">QR Code</span>
+            <span class="tech-pill">AI Audit</span>
+          </div>
+        </article>
+
+        <article class="glass p-6" data-aos="fade-up">
+          <div class="flex items-start justify-between mb-3">
+            <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-sky-500 to-indigo-500 flex items-center justify-center text-xl">✈️</div>
+            <span class="tech-pill" data-i18n="feat.confidential">Confidential</span>
+          </div>
+          <h3 class="font-display font-bold text-base mb-1.5" data-i18n="feat.karisma.name">Karisma Ground Handling Service</h3>
+          <p class="text-sm text-gray-400 mb-3" data-i18n="feat.karisma.desc">Jadwal penerbangan, manifest, maintenance.</p>
+          <div class="flex gap-1 flex-wrap">
+            <span class="tech-pill">Laravel</span>
+            <span class="tech-pill">Bootstrap</span>
+            <span class="tech-pill">MySQL</span>
+          </div>
+        </article>
+
+        <article class="glass p-6" data-aos="fade-up">
+          <div class="flex items-start justify-between mb-3">
+            <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-violet-500 to-indigo-500 flex items-center justify-center text-xl">🎓</div>
+            <span class="tech-pill" data-i18n="feat.confidential">Confidential</span>
+          </div>
+          <h3 class="font-display font-bold text-base mb-1.5" data-i18n="feat.istqb.name">ISTQB Courseware Suite</h3>
+          <p class="text-sm text-gray-400 mb-3" data-i18n="feat.istqb.desc">CTFL Core, CTAL-TM/TA/TAE, CTFL-AT, CT-GenAI.</p>
+          <div class="flex gap-1 flex-wrap">
+            <span class="tech-pill">Python</span>
+            <span class="tech-pill">Markdown</span>
+            <span class="tech-pill">PPTX</span>
+            <span class="tech-pill">YAML</span>
+          </div>
+        </article>
+
+        <article class="glass p-6" data-aos="fade-up">
+          <div class="flex items-start justify-between mb-3">
+            <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center text-xl">📅</div>
+            <span class="tech-pill" data-i18n="feat.confidential">Confidential</span>
+          </div>
+          <h3 class="font-display font-bold text-base mb-1.5" data-i18n="feat.almanak.name">Almanak — Calendar by Perspective</h3>
+          <p class="text-sm text-gray-400 mb-3" data-i18n="feat.almanak.desc">Context-aware multi-perspective calendar.</p>
+          <div class="flex gap-1 flex-wrap">
+            <span class="tech-pill">Next.js</span>
+            <span class="tech-pill">TypeScript</span>
+            <span class="tech-pill">REST API</span>
+          </div>
+        </article>
+
+        <article class="glass p-6" data-aos="fade-up">
+          <div class="flex items-start justify-between mb-3">
+            <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-xl">🤖</div>
+            <span class="tech-pill" data-i18n="feat.confidential">Confidential</span>
+          </div>
+          <h3 class="font-display font-bold text-base mb-1.5" data-i18n="feat.vibing.name">Vibing Publisher & Ideation</h3>
+          <p class="text-sm text-gray-400 mb-3" data-i18n="feat.vibing.desc">11 AI agents untuk SEO/GEO/AEO.</p>
+          <div class="flex gap-1 flex-wrap">
+            <span class="tech-pill">AI Agents</span>
+            <span class="tech-pill">Next.js</span>
+            <span class="tech-pill">Automation</span>
+            <span class="tech-pill">LLM</span>
+          </div>
+        </article>
+
+        <article class="glass p-6" data-aos="fade-up">
+          <div class="flex items-start justify-between mb-3">
+            <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center text-xl">🚗</div>
+            <span class="tech-pill" data-i18n="feat.confidential">Confidential</span>
+          </div>
+          <h3 class="font-display font-bold text-base mb-1.5" data-i18n="feat.rent.name">Rent-Track Platform</h3>
+          <p class="text-sm text-gray-400 mb-3" data-i18n="feat.rent.desc">Dual backend (Express + FastAPI) + multi-FE.</p>
+          <div class="flex gap-1 flex-wrap">
+            <span class="tech-pill">React</span>
+            <span class="tech-pill">Express.js</span>
+            <span class="tech-pill">Python</span>
+            <span class="tech-pill">MySQL</span>
+          </div>
+        </article>
+
+        <article class="glass p-6" data-aos="fade-up">
+          <div class="flex items-start justify-between mb-3">
+            <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-xl">📝</div>
+            <span class="tech-pill" data-i18n="feat.confidential">Confidential</span>
+          </div>
+          <h3 class="font-display font-bold text-base mb-1.5" data-i18n="feat.exam.name">Neotek CBT Exam Platform</h3>
+          <p class="text-sm text-gray-400 mb-3" data-i18n="feat.exam.desc">Admin, peserta, & engine ujian real-time.</p>
+          <div class="flex gap-1 flex-wrap">
+            <span class="tech-pill">Laravel</span>
+            <span class="tech-pill">MySQL</span>
+            <span class="tech-pill">REST API</span>
+          </div>
+        </article>
+
+        <article class="glass p-6" data-aos="fade-up">
+          <div class="flex items-start justify-between mb-3">
+            <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-yellow-500 to-amber-500 flex items-center justify-center text-xl">🕌</div>
+            <span class="tech-pill" data-i18n="feat.confidential">Confidential</span>
+          </div>
+          <h3 class="font-display font-bold text-base mb-1.5" data-i18n="feat.abhinta.name">Abhinta Donation & Foundation Suite</h3>
+          <p class="text-sm text-gray-400 mb-3" data-i18n="feat.abhinta.desc">Suite donasi: BMI, ZISWAF, Cinta Quran, Mukti.</p>
+          <div class="flex gap-1 flex-wrap">
+            <span class="tech-pill">Laravel</span>
+            <span class="tech-pill">React</span>
+            <span class="tech-pill">MySQL</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GITLAB REPOS ============ -->
+  <section id="repos" class="section-padding relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-12" data-aos="fade-up">
+        <span class="section-eyebrow" data-i18n="repo.eyebrow">Open Source</span>
+        <h2 class="section-title font-display"><span data-i18n="repo.title">Repositori GitLab Saya</span></h2>
+        <p class="text-gray-400 max-w-2xl mx-auto" data-i18n="repo.subtitle">
+          Proyek personal, latihan, & eksperimen yang saya publish di GitLab. Klik untuk lihat source code.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+        <a href="https://gitlab.com/ipulsamudin/undangan" target="_blank" rel="noopener" class="glass p-5 block group" data-aos="fade-up">
+          <div class="flex items-start justify-between mb-3">
+            <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-pink-500 to-rose-500 flex items-center justify-center text-lg">💌</div>
+            <svg class="text-gray-500 group-hover:text-mns-pink transition" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg>
+          </div>
+          <h3 class="font-display font-bold text-base mb-1.5">undangan</h3>
+          <p class="text-sm text-gray-400 mb-3" data-i18n="repo.undangan">Template undangan digital.</p>
+          <div class="flex gap-1 flex-wrap"><span class="tech-pill">HTML</span><span class="tech-pill">CSS</span><span class="tech-pill">JS</span></div>
+        </a>
+
+        <a href="https://gitlab.com/ipulsamudin/cheat-spinner" target="_blank" rel="noopener" class="glass p-5 block group" data-aos="fade-up">
+          <div class="flex items-start justify-between mb-3">
+            <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center text-lg">🎯</div>
+            <svg class="text-gray-500 group-hover:text-mns-pink transition" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg>
+          </div>
+          <h3 class="font-display font-bold text-base mb-1.5">cheat-spinner</h3>
+          <p class="text-sm text-gray-400 mb-3" data-i18n="repo.spinner">Tool spinner / random pick.</p>
+          <div class="flex gap-1 flex-wrap"><span class="tech-pill">JavaScript</span></div>
+        </a>
+
+        <a href="https://gitlab.com/ipulsamudin/training_react" target="_blank" rel="noopener" class="glass p-5 block group" data-aos="fade-up">
+          <div class="flex items-start justify-between mb-3">
+            <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center text-lg">⚛️</div>
+            <svg class="text-gray-500 group-hover:text-mns-pink transition" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg>
+          </div>
+          <h3 class="font-display font-bold text-base mb-1.5">training_react</h3>
+          <p class="text-sm text-gray-400 mb-3" data-i18n="repo.training_react">Materi & latihan React.js.</p>
+          <div class="flex gap-1 flex-wrap"><span class="tech-pill">React</span><span class="tech-pill">JSX</span></div>
+        </a>
+
+        <a href="https://gitlab.com/ipulsamudin/prediksi_produk" target="_blank" rel="noopener" class="glass p-5 block group" data-aos="fade-up">
+          <div class="flex items-start justify-between mb-3">
+            <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-violet-500 to-purple-500 flex items-center justify-center text-lg">📊</div>
+            <svg class="text-gray-500 group-hover:text-mns-pink transition" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg>
+          </div>
+          <h3 class="font-display font-bold text-base mb-1.5">prediksi_produk</h3>
+          <p class="text-sm text-gray-400 mb-3" data-i18n="repo.prediksi">Sistem prediksi produk.</p>
+          <div class="flex gap-1 flex-wrap"><span class="tech-pill">Data</span><span class="tech-pill">Analysis</span></div>
+        </a>
+
+        <a href="https://gitlab.com/ipulsamudin/pemwebauth" target="_blank" rel="noopener" class="glass p-5 block group" data-aos="fade-up">
+          <div class="flex items-start justify-between mb-3">
+            <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center text-lg">🔐</div>
+            <svg class="text-gray-500 group-hover:text-mns-pink transition" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg>
+          </div>
+          <h3 class="font-display font-bold text-base mb-1.5">PemWebAuth</h3>
+          <p class="text-sm text-gray-400 mb-3" data-i18n="repo.pemwebauth">Login, register, session.</p>
+          <div class="flex gap-1 flex-wrap"><span class="tech-pill">PHP</span><span class="tech-pill">Auth</span></div>
+        </a>
+
+        <a href="https://gitlab.com/ipulsamudin/monitoring_bts" target="_blank" rel="noopener" class="glass p-5 block group" data-aos="fade-up">
+          <div class="flex items-start justify-between mb-3">
+            <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-sky-500 to-indigo-500 flex items-center justify-center text-lg">📡</div>
+            <svg class="text-gray-500 group-hover:text-mns-pink transition" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg>
+          </div>
+          <h3 class="font-display font-bold text-base mb-1.5">monitoring_bts</h3>
+          <p class="text-sm text-gray-400 mb-3" data-i18n="repo.monitoring_bts">Monitoring BTS.</p>
+          <div class="flex gap-1 flex-wrap"><span class="tech-pill">Web</span><span class="tech-pill">Dashboard</span></div>
+        </a>
+
+        <a href="https://gitlab.com/ipulsamudin/latihanpemweb" target="_blank" rel="noopener" class="glass p-5 block group" data-aos="fade-up">
+          <div class="flex items-start justify-between mb-3">
+            <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-yellow-500 to-orange-500 flex items-center justify-center text-lg">📚</div>
+            <svg class="text-gray-500 group-hover:text-mns-pink transition" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg>
+          </div>
+          <h3 class="font-display font-bold text-base mb-1.5">latihanPemweb</h3>
+          <p class="text-sm text-gray-400 mb-3" data-i18n="repo.latihanpemweb">Latihan web programming.</p>
+          <div class="flex gap-1 flex-wrap"><span class="tech-pill">HTML</span><span class="tech-pill">CSS</span><span class="tech-pill">PHP</span></div>
+        </a>
+
+        <a href="https://gitlab.com/ipulsamudin/crud" target="_blank" rel="noopener" class="glass p-5 block group" data-aos="fade-up">
+          <div class="flex items-start justify-between mb-3">
+            <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-fuchsia-500 to-pink-500 flex items-center justify-center text-lg">🗃️</div>
+            <svg class="text-gray-500 group-hover:text-mns-pink transition" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg>
+          </div>
+          <h3 class="font-display font-bold text-base mb-1.5">crud</h3>
+          <p class="text-sm text-gray-400 mb-3" data-i18n="repo.crud">Template CRUD database.</p>
+          <div class="flex gap-1 flex-wrap"><span class="tech-pill">PHP</span><span class="tech-pill">MySQL</span></div>
+        </a>
+
+        <a href="https://gitlab.com/ipulsamudin/buku_tamu" target="_blank" rel="noopener" class="glass p-5 block group" data-aos="fade-up">
+          <div class="flex items-start justify-between mb-3">
+            <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-rose-500 to-red-500 flex items-center justify-center text-lg">📖</div>
+            <svg class="text-gray-500 group-hover:text-mns-pink transition" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg>
+          </div>
+          <h3 class="font-display font-bold text-base mb-1.5">buku_tamu</h3>
+          <p class="text-sm text-gray-400 mb-3" data-i18n="repo.bukutamu">Buku tamu digital.</p>
+          <div class="flex gap-1 flex-wrap"><span class="tech-pill">PHP</span><span class="tech-pill">MySQL</span></div>
+        </a>
+
+        <a href="https://gitlab.com/ipulsamudin/cucumber_testing_jest" target="_blank" rel="noopener" class="glass p-5 block group" data-aos="fade-up">
+          <div class="flex items-start justify-between mb-3">
+            <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-green-500 to-lime-500 flex items-center justify-center text-lg">🥒</div>
+            <svg class="text-gray-500 group-hover:text-mns-pink transition" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg>
+          </div>
+          <h3 class="font-display font-bold text-base mb-1.5">cucumber_testing_jest</h3>
+          <p class="text-sm text-gray-400 mb-3" data-i18n="repo.cucumber_jest">BDD testing Cucumber + Jest.</p>
+          <div class="flex gap-1 flex-wrap"><span class="tech-pill">Cucumber</span><span class="tech-pill">Jest</span><span class="tech-pill">JS</span></div>
+        </a>
+
+        <a href="https://gitlab.com/mnurs/final-project-sc" target="_blank" rel="noopener" class="glass p-5 block group" data-aos="fade-up">
+          <div class="flex items-start justify-between mb-3">
+            <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-purple-500 to-indigo-500 flex items-center justify-center text-lg">🎓</div>
+            <svg class="text-gray-500 group-hover:text-mns-pink transition" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg>
+          </div>
+          <h3 class="font-display font-bold text-base mb-1.5">final-project-sc</h3>
+          <p class="text-sm text-gray-400 mb-3" data-i18n="repo.final_sc">Final Project Startup Campus.</p>
+          <div class="flex gap-1 flex-wrap"><span class="tech-pill">Backend</span><span class="tech-pill">REST API</span></div>
+        </a>
+
+        <a href="https://gitlab.com/mnurs/smart-campus-template" target="_blank" rel="noopener" class="glass p-5 block group" data-aos="fade-up">
+          <div class="flex items-start justify-between mb-3">
+            <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-lg">🏫</div>
+            <svg class="text-gray-500 group-hover:text-mns-pink transition" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg>
+          </div>
+          <h3 class="font-display font-bold text-base mb-1.5">smart-campus-template</h3>
+          <p class="text-sm text-gray-400 mb-3" data-i18n="repo.smart_campus">Template Smart Campus.</p>
+          <div class="flex gap-1 flex-wrap"><span class="tech-pill">Template</span><span class="tech-pill">Web</span></div>
+        </a>
+
+      </div>
+
+      <div class="text-center mt-10" data-aos="fade-up">
+        <a href="https://gitlab.com/ipulsamudin" target="_blank" rel="noopener" class="btn-ghost inline-flex">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="m22.2 9.7-.03-.08-3-7.93a.78.78 0 0 0-1.5.04L15.6 8.4H8.4L6.36 1.73a.78.78 0 0 0-1.5-.04L1.83 9.6l-.03.1A5.55 5.55 0 0 0 3.8 16.1l.01.01.03.02 4.55 3.41 2.25 1.7 1.37 1.03a.92.92 0 0 0 1.12 0l1.37-1.03 2.25-1.7 4.58-3.43.01-.01A5.55 5.55 0 0 0 22.2 9.7"/></svg>
+          <span data-i18n="repo.profile">Lihat profil GitLab lengkap</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EDUCATION ============ -->
+  <section id="education" class="section-padding relative">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-14" data-aos="fade-up">
+        <span class="section-eyebrow" data-i18n="edu.eyebrow">Pendidikan</span>
+        <h2 class="section-title font-display"><span data-i18n="edu.title">Latar belakang akademik</span></h2>
+        <p class="text-gray-400 max-w-2xl mx-auto" data-i18n="edu.subtitle">Pondasi formal yang membentuk pola pikir engineering saya.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 mb-12">
+        <!-- UNS -->
+        <div class="glass p-6 flex flex-col" data-aos="fade-up">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-mns-pink to-mns-purple flex items-center justify-center mb-4">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          </div>
+          <div class="text-xs font-semibold text-mns-pink mb-2" data-i18n="edu.uns.period">2020 — 2024</div>
+          <h3 class="font-display font-bold text-lg mb-1" data-i18n="edu.uns.school">Universitas Sebelas Maret</h3>
+          <p class="text-purple-300 text-sm mb-2" data-i18n="edu.uns.degree">S1 Ilmu Komputer / Informatika</p>
+          <p class="text-gray-400 text-sm mt-auto" data-i18n="edu.uns.detail">IPK 3.81 / 4.0 — Surakarta</p>
+        </div>
+
+        <!-- Startup Campus -->
+        <div class="glass p-6 flex flex-col" data-aos="fade-up" data-aos-delay="100">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-mns-purple to-mns-blue flex items-center justify-center mb-4">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/></svg>
+          </div>
+          <div class="text-xs font-semibold text-mns-pink mb-2" data-i18n="edu.startup.period">Agu 2022 — Des 2022</div>
+          <h3 class="font-display font-bold text-lg mb-1" data-i18n="edu.startup.school">Startup Campus Kampus Merdeka</h3>
+          <p class="text-purple-300 text-sm mb-2" data-i18n="edu.startup.degree">Backend Track</p>
+          <p class="text-gray-400 text-sm mt-auto" data-i18n="edu.startup.detail">Nilai: A (95.95/100)</p>
+        </div>
+
+        <!-- SMK -->
+        <div class="glass p-6 flex flex-col" data-aos="fade-up" data-aos-delay="200">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-mns-blue to-mns-cyan flex items-center justify-center mb-4">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <div class="text-xs font-semibold text-mns-pink mb-2" data-i18n="edu.smk.period">2015 — 2018</div>
+          <h3 class="font-display font-bold text-lg mb-1" data-i18n="edu.smk.school">SMK Tunas Media</h3>
+          <p class="text-purple-300 text-sm mb-2" data-i18n="edu.smk.degree">Rekayasa Perangkat Lunak</p>
+          <p class="text-gray-400 text-sm mt-auto" data-i18n="edu.smk.detail">Software Engineering</p>
+        </div>
+      </div>
+
+      <!-- Achievement -->
+      <div class="glass p-6 flex items-center gap-5" data-aos="fade-up">
+        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-yellow-400 to-amber-500 flex items-center justify-center text-2xl">🏆</div>
+        <div>
+          <div class="text-xs uppercase tracking-wider text-mns-pink font-semibold mb-1" data-i18n="edu.achievement">Pencapaian</div>
+          <p class="font-display font-bold text-lg" data-i18n="edu.ach.lks">Juara 1 LKS IT Software Application Tingkat Kota</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="contact" class="section-padding relative">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-14" data-aos="fade-up">
+        <span class="section-eyebrow" data-i18n="contact.eyebrow">Hubungi Saya</span>
+        <h2 class="section-title font-display"><span data-i18n="contact.title">Mari kita ngobrol</span></h2>
+        <p class="text-gray-400 max-w-2xl mx-auto" data-i18n="contact.subtitle">Punya proyek menarik? Pintu saya selalu terbuka.</p>
+      </div>
+
+      <div class="grid md:grid-cols-5 gap-8">
+        <!-- Info column -->
+        <div class="md:col-span-2 space-y-5" data-aos="fade-right">
+          <a href="mailto:ipulsamudin@gmail.com" class="glass p-5 flex items-center gap-4 group">
+            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-mns-pink to-mns-purple flex items-center justify-center flex-shrink-0">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
+            </div>
+            <div class="min-w-0">
+              <div class="text-xs uppercase tracking-wider text-gray-500 font-semibold" data-i18n="contact.info.email">Email</div>
+              <div class="font-semibold truncate">ipulsamudin@gmail.com</div>
+            </div>
+          </a>
+
+          <a href="https://wa.me/6285219679808" target="_blank" rel="noopener" class="glass p-5 flex items-center gap-4 group">
+            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center flex-shrink-0">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.9-2.9-1.6-4-3.5-.3-.5.3-.5.8-1.5.1-.2.1-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5 4.5 1.9.8 2.6.9 3.5.7.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.6 1.4 5.2L2 22l5-1.4c1.5.8 3.2 1.3 5 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2"/></svg>
+            </div>
+            <div>
+              <div class="text-xs uppercase tracking-wider text-gray-500 font-semibold" data-i18n="contact.info.phone">Telepon</div>
+              <div class="font-semibold">+62 852-1967-9808</div>
+            </div>
+          </a>
+
+          <div class="glass p-5 flex items-center gap-4">
+            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-mns-blue to-mns-cyan flex items-center justify-center flex-shrink-0">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <div class="text-xs uppercase tracking-wider text-gray-500 font-semibold" data-i18n="contact.info.location">Lokasi</div>
+              <div class="font-semibold" data-i18n="contact.location.value">Depok, Indonesia</div>
+            </div>
+          </div>
+
+          <!-- Social links -->
+          <div class="flex gap-3 pt-2">
+            <a href="https://linkedin.com/in/muhammad-nur-syaifullah-56a77325a" target="_blank" rel="noopener" class="glass p-3 hover:bg-blue-500/10" aria-label="LinkedIn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="#60a5fa"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14M8.34 17.34v-7H6.01v7h2.33M7.17 9.34a1.35 1.35 0 1 0 0-2.7 1.35 1.35 0 0 0 0 2.7m11 8v-3.84c0-2.16-1.16-3.17-2.7-3.17-1.25 0-1.81.69-2.12 1.17v-1H11.01v7h2.33v-3.94c0-.94.65-1.55 1.4-1.55.72 0 1.43.52 1.43 1.57v3.92h2.34Z"/></svg>
+            </a>
+            <a href="https://gitlab.com/mnurs" target="_blank" rel="noopener" class="glass p-3 hover:bg-orange-500/10" aria-label="GitLab">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="#fb923c"><path d="m22.2 9.7-.03-.08-3-7.93a.78.78 0 0 0-1.5.04L15.6 8.4H8.4L6.36 1.73a.78.78 0 0 0-1.5-.04L1.83 9.6l-.03.1A5.55 5.55 0 0 0 3.8 16.1l.01.01.03.02 4.55 3.41 2.25 1.7 1.37 1.03a.92.92 0 0 0 1.12 0l1.37-1.03 2.25-1.7 4.58-3.43.01-.01A5.55 5.55 0 0 0 22.2 9.7"/></svg>
+            </a>
+            <a href="https://www.instagram.com/mnurs23/" target="_blank" rel="noopener" class="glass p-3 hover:bg-pink-500/10" aria-label="Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f472b6" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Form column -->
+        <form id="contact-form" class="md:col-span-3 glass p-7 space-y-4" data-aos="fade-left">
+          <div class="grid sm:grid-cols-2 gap-4">
+            <input name="name" type="text" required class="input-field" data-i18n-placeholder="contact.form.name" placeholder="Nama Anda" />
+            <input name="email" type="email" required class="input-field" data-i18n-placeholder="contact.form.email" placeholder="Email Anda" />
+          </div>
+          <input name="subject" type="text" class="input-field" data-i18n-placeholder="contact.form.subject" placeholder="Subjek" />
+          <textarea name="message" rows="5" required class="input-field resize-none" data-i18n-placeholder="contact.form.message" placeholder="Tulis pesan Anda di sini..."></textarea>
+          <button type="submit" class="btn-primary w-full justify-center">
+            <span data-i18n="contact.form.send">Kirim Pesan</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="relative border-t border-white/5 py-10">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <a href="#hero" class="inline-flex items-center gap-2 font-display font-bold text-lg mb-3">
+        <span class="text-2xl">◆</span>
+        <span class="gradient-text">Syaiful</span>.dev
+      </a>
+      <p class="text-sm text-gray-400 mb-2" data-i18n="footer.tagline">
+        Dibangun dengan ❤️ menggunakan HTML, Tailwind CSS & sentuhan JavaScript murni.
+      </p>
+      <p class="text-xs text-gray-500">
+        © <span id="year">2026</span> Muhammad Nur Syaifullah. <span data-i18n="footer.rights">Hak cipta dilindungi.</span>
+      </p>
+    </div>
+  </footer>
+
+  <!-- ============ LIBS ============ -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
