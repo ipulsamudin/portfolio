@@ -112,7 +112,7 @@
 // AOS init
 window.addEventListener('load', () => {
   if (typeof AOS !== 'undefined') {
-    AOS.init({ duration: 800, easing: 'ease-out-cubic', once: true, offset: 60 });
+    AOS.init({ duration: 550, easing: 'ease-out', once: true, offset: 40 });
   }
 });
 
